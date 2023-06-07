@@ -1,0 +1,22 @@
+{% load static %}
+
+<div class="blog-title-area text-center">
+
+    {% for ctg in post.category.all %} <span class="color-orange"><a href="tech-category-01.html" title="">{{ctg}}</a></span>{% endfor %}
+
+    <h3>{{post.title}}</h3>
+
+    <div class="blog-meta big-meta">
+        <small><a href="tech-single.html" title="">{{post.published_date}}</a></small>
+        <small><a href="tech-author.html" title="">{{post.user.username}}</a></small>
+        <small><a href="#" title=""><i class="fa fa-eye"></i> 2344</a></small>
+    </div><!-- end meta -->
+
+    <div class="post-sharing">
+        <ul class="list-inline">
+            <li><a href="#" class="fb-button btn btn-primary"><i class="fa fa-facebook"></i> <span class="down-mobile">Share on Facebook</span></a></li>
+            <li><a href="#" class="tw-button btn btn-primary"><i class="fa fa-twitter"></i> <span class="down-mobile">Tweet on Twitter</span></a></li>
+            <li><a href="#" class="gp-button btn btn-primary"><i class="fa fa-google-plus"></i></a></li>
+        </ul>
+    </div><!-- end post-sharing -->
+</div><!-- end title -->

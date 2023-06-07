@@ -1,0 +1,11 @@
+{% load static %}
+{% for item in image %}
+<div class="widget">
+    <div class="banner-spot clearfix">
+        <div class="banner-img">
+            <img src="{{item.image_rightUp.url}}" alt="" class="img-fluid">
+        </div>
+    </div>
+</div>
+
+{% endfor %}

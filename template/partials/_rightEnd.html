@@ -1,0 +1,11 @@
+{% load static %}
+{% for item in image %}
+<div class="widget">
+    <div class="banner-spot clearfix">
+        <div class="banner-img">
+          
+            <img src="{{item.image_righend.url}}" alt="reklam alanı" class="img-fluid">
+        </div><!-- end banner-img -->
+    </div><!-- end banner -->
+</div><!-- end widget -->
+{% endfor %}

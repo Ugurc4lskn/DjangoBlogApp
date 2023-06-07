@@ -1,0 +1,9 @@
+<div class="blog-title-area">
+    <div class="tag-cloud-single">
+        <span>Tags</span>
+        {% for tagname in post.tag.all %}
+        <small><a href="#" title="">{{tagname}}</a></small>
+        {% endfor %}
+    </div><!-- end meta -->
+
+</div><!-- end title -->

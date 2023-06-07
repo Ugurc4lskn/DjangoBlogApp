@@ -1,0 +1,54 @@
+{% extends "base.html" %}   
+
+
+{% block ctgry %}
+
+{% for item in content %}
+   
+<div class="blog-box row" >
+    <div class="col-md-4">
+        <div class="post-media">
+            <a href="{{item.image.url}}" title="">
+                <img src="{{item.image.url}}" alt="" class="img-fluid">
+                <div class="hovereffect"></div>
+            </a>
+        </div><!-- end media -->
+    </div><!-- end col -->
+
+    <div class="blog-meta big-meta col-md-8" >
+        <h4><a href="{% url 'details' item.pk item.slug  %}" title="" >{{item.title}}</a></h4>
+        <p style="color:black">
+            {{item.desription}}
+        </p>
+        {% for categ in item.category.all %}
+         
+        <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html" title="">{{categ}}</a></small>
+        {% endfor %}
+       
+        <small><a href="tech-single.html" title="" > {{item.published_date}}</a></small>
+        <small><a href="tech-author.html" title=""> {{item.user.username}}</a></small>
+        <small><a href="tech-single.html" title=""><i class="fa fa-eye"></i> 3331</a></small>
+    </div><!-- end meta -->
+</div>
+{% endfor %}
+<div class="row" >
+    <div class="col-md-12" >
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-start" >
+                {% if content.has_previous %}
+                <a href="?page={{ post.previous_page_number|escape }}" class="page-link">Previous</a>
+              {% endif %}
+              <span class="page-link">
+                 {{ content.number }} {{ page_obj.paginator.num_pages|escape }}
+              </span>
+              {% if content.has_next %}
+                <a href="?page={{ content.next_page_number|escape }}" class="page-link">Next</a>
+              {% endif %}
+                
+            </ul>
+        </nav>
+    </div><!-- end col -->
+</div><!-- end row -->
+{% endblock ctgry %}
+
+

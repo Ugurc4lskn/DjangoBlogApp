@@ -1,0 +1,18 @@
+<div class="row" >
+    <div class="col-md-12" >
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-start" >
+                {% if post.has_previous %}
+                <a href="?page={{ post.previous_page_number|escape }}" class="page-link">Previous</a>
+              {% endif %}
+              <span class="page-link">
+                 {{ post.number }} {{ page_obj.paginator.num_pages|escape }}
+              </span>
+              {% if post.has_next %}
+                <a href="?page={{ post.next_page_number|escape }}" class="page-link">Next</a>
+              {% endif %}
+                
+            </ul>
+        </nav>
+    </div><!-- end col -->
+</div><!-- end row -->
